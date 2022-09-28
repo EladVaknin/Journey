@@ -22,4 +22,17 @@ public class practical {
         return true;
     }
 
+
+    public static boolean ValidChecksEmailAndPassword(Context context, String email, String password) {
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
+            Toast.makeText(context, "Empty password or Email", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if (password.length() < 8) {
+            Toast.makeText(context, "Password length must be bigger than 8", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
     }
