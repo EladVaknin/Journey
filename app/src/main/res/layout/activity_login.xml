@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="240dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Logoview"
+        android:background="@drawable/journey_logo"/>
+
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="270dp"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="Email"
+        android:textColorHint="@color/white"
+        android:inputType="textEmailAddress"
+        android:textColor="@color/white"
+        android:textStyle="italic" />
+
+    <EditText
+        android:id="@+id/editTextNumberPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTextEmailAddress"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="80dp"
+        android:ems="10"
+        android:hint="Password"
+        android:textColorHint="@color/white"
+        android:inputType="numberPassword"
+        android:minHeight="48dp"
+        android:textColor="@color/white" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LoginButton"
+        android:layout_marginTop="400dp"
+        android:layout_centerHorizontal="true"
+        android:text="Login"
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+<Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/RegisterButton"
+    android:layout_marginTop="4dp"
+    android:layout_centerHorizontal="true"
+    android:layout_below="@id/LoginButton"
+    android:text="Register"
+    android:backgroundTint="@android:color/holo_orange_dark"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/aboutUsButtom"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/RegisterButton"
+        android:text="About"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+
+
+
+
+
+
+
+
+</RelativeLayout>
