@@ -12,7 +12,7 @@ public class practical {
             return false;
         }
         if (password.length() < 8) {
-            Toast.makeText(context, "password length must be bigger than 8", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "Password length must be bigger than 8", Toast.LENGTH_SHORT).show();
             return false;
         }
         if (gender != "male" || gender != "Male" || gender != "female" || gender != "Female"){
