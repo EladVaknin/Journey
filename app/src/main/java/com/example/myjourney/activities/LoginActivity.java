@@ -5,14 +5,19 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myjourney.R;
+import com.example.myjourney.useful.CacheUtilities;
 import com.example.myjourney.useful.practical;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private Button mLoginButton ,mRegisterButton ,mAboutsUsButton;
@@ -73,7 +78,26 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void getUserDetailsFromFireBaseAndRedirectToProfileActivity() {
+        mDbUser.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot userSnapshot) {
+                CacheUtilities.cacheUserName(LoginActivity.this, (String) userSnapshot.child("userName").getValue());
+                CacheUtilities.cacheHeight(LoginActivity.this, (String) userSnapshot.child("height").getValue());
+                CacheUtilities.cacheWeight(LoginActivity.this, (String) userSnapshot.child("weight").getValue());
+                CacheUtilities.cacheAge(LoginActivity.this, (String) userSnapshot.child("age").getValue());
+                CacheUtilities.cacheGender(LoginActivity.this, (String) userSnapshot.child("gender").getValue());
+                if (userSnapshot.child("profileUrl").exists()) {
+                    CacheUtilities.cacheImageProfile(LoginActivity.this, (String) userSnapshot.child("profileUrl").getValue());
+                }
+                startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
+                finish();
+            }
 
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 

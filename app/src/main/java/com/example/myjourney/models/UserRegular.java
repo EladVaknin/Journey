@@ -4,27 +4,30 @@ public class UserRegular {
     // fields
     String UserName ,mEmail ,id, gender ;
     String Picture;
-    int age ,weight,height;
+    String age ,weight,height;
     int counter;
 
 
     // constructors
-    public UserRegular (String id ,String UserName,String mEmail,String gender,int age,int weight,int height){
+//    public UserRegular (String id ,String UserName,String mEmail,String gender,String age,String weight,String height){
+//        this.id =id;
+//        this.UserName = UserName;
+//        this.mEmail = mEmail;
+//        this.gender = gender;
+//        this.age=age;
+//        this.weight=weight;
+//        this.height=height;
+//    }
+
+
+    public UserRegular (String id ,String UserName,String mEmail,String gender,String weight,String height,String age){
         this.id =id;
         this.UserName = UserName;
         this.mEmail = mEmail;
         this.gender = gender;
-        this.age=age;
-        this.weight=weight;
         this.height=height;
-    }
-
-
-    public UserRegular (String id ,String UserName,String mEmail,String gender){
-        this.id =id;
-        this.UserName = UserName;
-        this.mEmail = mEmail;
-        this.gender = gender;
+        this.age =age;
+        this.weight =weight;
     }
 
 
@@ -70,27 +73,27 @@ public class UserRegular {
         Picture = picture;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
-    public int getWeight() {
+    public String getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(String weight) {
         this.weight = weight;
     }
 
-    public int getHeight() {
+    public String getHeight() {
         return height;
     }
 
-    public void setHeight(int height) {
+    public void setHeight(String height) {
         this.height = height;
     }
 

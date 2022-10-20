@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myjourney.R;
 import com.example.myjourney.models.UserRegular;
+import com.example.myjourney.useful.CacheUtilities;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -57,6 +58,10 @@ public class RegisterActivity extends AppCompatActivity {
         String password = mPasswordEditText.getText().toString();
         String userName = mUserNameEditText.getText().toString();
         String gender = mGenderEditText.getText().toString();
+        String weight = mWeightEditText.getText().toString();
+        String height = mGHeightEditText.getText().toString();
+        String age = mAgeEditText.getText().toString();
+
         if (TextUtils.isEmpty(userName)||TextUtils.isEmpty(email)){
             Toast.makeText(this,"User name or Mail is empty",Toast.LENGTH_SHORT).show();
             return;
@@ -66,9 +71,12 @@ public class RegisterActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 handleProgressBar(false);
                 if (task.isSuccessful()) {
-                    UserRegular user = new UserRegular(mAuth.getCurrentUser().getUid(), email, userName, gender);
-//                    practical.cacheUserName(this, userName);
-//                    practical.cachePhoneNumber(this, phone);
+                    UserRegular user = new UserRegular(mAuth.getCurrentUser().getUid(), email, userName, gender,weight,height,age);
+                    CacheUtilities.cacheUserName(this, userName);
+                    CacheUtilities.cacheGender(this, gender);
+                    CacheUtilities.cacheWeight(this, weight);
+                    CacheUtilities.cacheHeight(this, height);
+                    CacheUtilities.cacheAge(this, age);
                     mDBuser.child(mAuth.getCurrentUser().getUid()).setValue(user);
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();
