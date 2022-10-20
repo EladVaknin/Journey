@@ -71,7 +71,7 @@ public class RegisterActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 handleProgressBar(false);
                 if (task.isSuccessful()) {
-                    UserRegular user = new UserRegular(mAuth.getCurrentUser().getUid(), email, userName, gender,weight,height,age);
+                    UserRegular user = new UserRegular(mAuth.getCurrentUser().getUid(),userName,email, gender,weight,height,age);
                     CacheUtilities.cacheUserName(this, userName);
                     CacheUtilities.cacheGender(this, gender);
                     CacheUtilities.cacheWeight(this, weight);

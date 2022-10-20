@@ -78,6 +78,17 @@
         android:text="Update Journey"
         android:backgroundTint="@android:color/holo_orange_dark"/>
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LogoutButton"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/UpdateJourneyButton"
+        android:text="Logout"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+    
+
 
 
 

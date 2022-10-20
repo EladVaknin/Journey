@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myjourney.R;
+import com.example.myjourney.useful.CacheUtilities;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,6 +31,7 @@ import com.google.firebase.storage.UploadTask;
 public class ProfileActivity extends AppCompatActivity {
     private static final String USERS_TABLE = "users";
     private Button mBmiButton ,mUpdateJourneyButton,mMyJourneyButton,mShoesStatusButton;
+    private Button mLogoutButton;
     private ImageView mPictureImageView;
     private TextView mFullName ,mLastResult;
     private final DatabaseReference mDbUser = FirebaseDatabase.getInstance().getReference(USERS_TABLE);
@@ -48,6 +50,9 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        mLogoutButton = findViewById(R.id.LogoutButton);
+        mLogoutButton.setOnClickListener(v -> redirectToLogout());
+
         mBmiButton = findViewById(R.id.BmiButton);
         mBmiButton.setOnClickListener(v -> redirectToBmiCalScreen());
         
@@ -71,6 +76,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         mLastResult = findViewById(R.id.LastResultTextView);
         // pull the last running from the main algo
+    }
+
+    private void redirectToLogout() {
+        FirebaseAuth.getInstance().signOut();
+        CacheUtilities.clearAll(this);
+        Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void redirectToShoesCalcuScreen() {
