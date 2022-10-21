@@ -27,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
     private static final String USERS_TABLE = "users";
@@ -37,7 +38,6 @@ public class ProfileActivity extends AppCompatActivity {
     private final DatabaseReference mDbUser = FirebaseDatabase.getInstance().getReference(USERS_TABLE);
 
 
-//////////////  need to work on cache ////////////
     ///////// build the main algoritem ////
     //////// build redict to Bmi and shoes status page/////
     //////
@@ -67,12 +67,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         mPictureImageView = findViewById(R.id.profile_image_view);
         mPictureImageView.setOnClickListener(v -> choosePictureFromGalleryAndUploadToTheFireBase());
-//        if (!TextUtils.isEmpty(CacheUtilities.getImageProfile(this))) {
-//            Picasso.get().load(CacheUtilities.getImageProfile(this)).noPlaceholder().into(mPictureImageView);
-//        }
+        if (!TextUtils.isEmpty(CacheUtilities.getImageProfile(this))) {
+            Picasso.get().load(CacheUtilities.getImageProfile(this)).noPlaceholder().into(mPictureImageView);
+        }
 
         mFullName =findViewById(R.id.userNameTextView);
-//        mFullName.setText(mFullName.getText() + CacheUtilities.getUserName(this));
+        mFullName.setText(mFullName.getText() + CacheUtilities.getUserName(this));
 
         mLastResult = findViewById(R.id.LastResultTextView);
         // pull the last running from the main algo
@@ -130,7 +130,7 @@ public class ProfileActivity extends AppCompatActivity {
         uploadTask.continueWithTask(task -> imageRef.getDownloadUrl()).addOnCompleteListener(task -> {
             if (task.isSuccessful()) {
                 mDbUser.child(FirebaseAuth.getInstance().getUid()).child("profileUrl").setValue(task.getResult().toString());
-//                CacheUtilities.cacheImageProfile(ProfileActivity.this, task.getResult().toString());
+                CacheUtilities.cacheImageProfile(ProfileActivity.this, task.getResult().toString());
             }
         });
     }
