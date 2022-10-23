@@ -32,6 +32,7 @@ import com.squareup.picasso.Picasso;
 public class ProfileActivity extends AppCompatActivity {
     private static final String USERS_TABLE = "users";
     private Button mBmiButton ,mUpdateJourneyButton,mMyJourneyButton,mShoesStatusButton;
+    private Button mCreateAJourney;
     private Button mLogoutButton;
     private ImageView mPictureImageView;
     private TextView mFullName ,mLastResult;
@@ -75,7 +76,15 @@ public class ProfileActivity extends AppCompatActivity {
         mFullName.setText(mFullName.getText() + CacheUtilities.getUserName(this));
 
         mLastResult = findViewById(R.id.LastResultTextView);
-        // pull the last running from the main algo
+        // pull the last running from the album (my journey)
+
+        mCreateAJourney = findViewById(R.id.CreatejourneyButton);
+        mCreateAJourney.setOnClickListener(v -> redirectToCreateAJourney ());
+    }
+
+    private void redirectToCreateAJourney() {
+        Intent intent = new Intent(ProfileActivity.this,CreateJourneyActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToLogout() {

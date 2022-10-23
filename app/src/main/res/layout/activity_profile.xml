@@ -42,10 +42,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/MyJourneyButton"
+        android:id="@+id/CreatejourneyButton"
         android:layout_marginTop="400dp"
         android:layout_centerHorizontal="true"
+        android:text="Create Journey"
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/MyJourneyButton"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
         android:text="My Journey"
+        android:layout_below="@id/CreatejourneyButton"
         android:backgroundTint="@android:color/holo_orange_dark" />
 
     <Button
@@ -54,7 +64,7 @@
         android:id="@+id/BmiButton"
         android:layout_marginTop="4dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/MyJourneyButton"
+        android:layout_below="@id/UpdateJourneyButton"
         android:text="BMI"
         android:backgroundTint="@android:color/holo_orange_dark"/>
 
@@ -74,7 +84,7 @@
         android:id="@+id/UpdateJourneyButton"
         android:layout_marginTop="4dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/ShoesStatusButton"
+        android:layout_below="@id/MyJourneyButton"
         android:text="Update Journey"
         android:backgroundTint="@android:color/holo_orange_dark"/>
 
@@ -84,7 +94,7 @@
         android:id="@+id/LogoutButton"
         android:layout_marginTop="4dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/UpdateJourneyButton"
+        android:layout_below="@id/ShoesStatusButton"
         android:text="Logout"
         android:backgroundTint="@android:color/holo_orange_dark"/>
 

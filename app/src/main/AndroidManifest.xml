@@ -26,6 +26,7 @@
         <activity android:name=".activities.ShoesStatusActivity"/>
         <activity android:name=".activities.UpdateUserDetailsActivity"/>
         <activity android:name=".activities.BmiActivity"/>
+        <activity android:name=".activities.CreateJourneyActivity"/>
     </application>
 
 </manifest>
