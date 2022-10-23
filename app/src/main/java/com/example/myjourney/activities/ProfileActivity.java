@@ -57,7 +57,7 @@ public class ProfileActivity extends AppCompatActivity {
         mBmiButton.setOnClickListener(v -> redirectToBmiCalScreen());
         
         mUpdateJourneyButton = findViewById(R.id.UpdateJourneyButton);
-        mUpdateJourneyButton.setOnClickListener(v -> redirectToTheMainAlgoScreen());
+        mUpdateJourneyButton.setOnClickListener(v -> redirectToUpdateScreen());
         
         mMyJourneyButton =findViewById(R.id.UpdateJourneyButton);
         mMyJourneyButton.setOnClickListener(v -> redirectToMyAlbumScreen());
@@ -87,12 +87,18 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void redirectToShoesCalcuScreen() {
+        Intent intent = new Intent(ProfileActivity.this, ShoesStatusActivity.class);
+        startActivity(intent);
     }
 
-    private void redirectToTheMainAlgoScreen() {
+    private void redirectToUpdateScreen() {
+        Intent intent = new Intent(ProfileActivity.this, ShoesStatusActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToBmiCalScreen() {
+        Intent intent = new Intent(ProfileActivity.this, BmiActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToMyAlbumScreen() {

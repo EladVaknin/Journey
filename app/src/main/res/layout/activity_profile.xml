@@ -21,10 +21,10 @@
         android:layout_below="@id/profile_image_view"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
-        android:text="User Name:"
+        android:text="User Name: "
         android:textAlignment="center"
         android:textColor="@android:color/holo_orange_dark"
-        android:textColorHint="#FF6E40"
+        android:textColorHint="@android:color/holo_orange_dark"
         android:textSize="20sp" />
     <TextView
         android:id="@+id/LastResultTextView"
@@ -87,7 +87,7 @@
         android:layout_below="@id/UpdateJourneyButton"
         android:text="Logout"
         android:backgroundTint="@android:color/holo_orange_dark"/>
-    
+
 
 
 

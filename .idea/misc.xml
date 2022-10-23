@@ -4,12 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_aboutus.xml" value="0.10054347826086957" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_bmi.xml" value="0.15208333333333332" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_coach_register.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_login.xml" value="0.10054347826086957" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_main.xml" value="0.15208333333333332" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_my_journey_album.xml" value="0.15208333333333332" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_profile.xml" value="0.16770833333333332" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_register.xml" value="0.10054347826086957" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_shoes_status.xml" value="0.15208333333333332" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyJourney/app/src/main/res/layout/activity_update_user_details.xml" value="0.15208333333333332" />
       </map>
     </option>
   </component>
