@@ -5,7 +5,7 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.widget.Toast;
 
-public class practical {
+public class Practical {
     public static boolean ValidChecks(Context context, String email, String password ,String gender ) {
         if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
             Toast.makeText(context, "Empty password or Email", Toast.LENGTH_SHORT).show();

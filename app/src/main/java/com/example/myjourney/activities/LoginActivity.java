@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myjourney.R;
 import com.example.myjourney.useful.CacheUtilities;
-import com.example.myjourney.useful.practical;
+import com.example.myjourney.useful.Practical;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
         String adminPassword = "12345678";
         String email = mEmailEditText.getText().toString().trim();
         String password = mPasswordEditText.getText().toString().trim();
-        if (practical.ValidChecksEmailAndPassword(this,email,password)) {
+        if (Practical.ValidChecksEmailAndPassword(this,email,password)) {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 if(task.isSuccessful()){
 //                    if (email.equals(Admin)&&password.equals(adminPassword)){

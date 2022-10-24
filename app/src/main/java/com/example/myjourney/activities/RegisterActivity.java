@@ -62,8 +62,9 @@ public class RegisterActivity extends AppCompatActivity {
         String height = mGHeightEditText.getText().toString();
         String age = mAgeEditText.getText().toString();
 
-        if (TextUtils.isEmpty(userName)||TextUtils.isEmpty(email)){
-            Toast.makeText(this,"User name or Mail is empty",Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(userName)||TextUtils.isEmpty(email) ||TextUtils.isEmpty(gender) ||TextUtils.isEmpty(weight)
+                ||TextUtils.isEmpty(height)||TextUtils.isEmpty(age)|| TextUtils.isEmpty(password)){
+            Toast.makeText(this,"One of the fields is empty",Toast.LENGTH_SHORT).show();
             return;
         }
         if (ValidChecksEmailAndPassword(this, email, password)) {

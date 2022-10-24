@@ -60,8 +60,8 @@ public class UpdateDetailsActivity extends AppCompatActivity {
         String height = mGHeightEditText.getText().toString();
         String age = mAgeEditText.getText().toString();
 
-        if (TextUtils.isEmpty(userName)){
-            Toast.makeText(this,"User name is empty",Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(userName) ||TextUtils.isEmpty(gender) ||TextUtils.isEmpty(weight)||TextUtils.isEmpty(height)||TextUtils.isEmpty(age)){
+            Toast.makeText(this,"One of the fields is empty",Toast.LENGTH_SHORT).show();
             return;
         }
             handleProgressBar(true);

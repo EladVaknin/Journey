@@ -40,13 +40,13 @@
         android:textSize="20sp" />
 
     <Button
+        android:id="@+id/CreatejourneyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/CreatejourneyButton"
-        android:layout_marginTop="400dp"
         android:layout_centerHorizontal="true"
-        android:text="Create Journey"
-        android:backgroundTint="@android:color/holo_orange_dark" />
+        android:layout_marginTop="300dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Create Journey" />
 
     <Button
         android:layout_width="wrap_content"
