@@ -30,6 +30,15 @@ public class UserRegular {
         this.weight =weight;
     }
 
+    public UserRegular (String id ,String UserName,String gender,String weight,String height,String age){
+        this.id =id;
+        this.UserName = UserName;
+        this.gender = gender;
+        this.height=height;
+        this.age =age;
+        this.weight =weight;
+    }
+
 
     //Getters&Setters
 

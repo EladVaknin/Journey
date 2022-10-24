@@ -30,6 +30,7 @@ import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 
 public class ProfileActivity extends AppCompatActivity {
+
     private static final String USERS_TABLE = "users";
     private Button mBmiButton ,mUpdateJourneyButton,mMyJourneyButton,mShoesStatusButton;
     private Button mCreateAJourney;
@@ -40,8 +41,8 @@ public class ProfileActivity extends AppCompatActivity {
 
 
     ///////// build the main algoritem ////
-    //////// build redict to Bmi and shoes status page/////
-    //////
+    //////// build the shoes status page/////
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
