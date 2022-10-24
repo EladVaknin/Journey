@@ -1,6 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Logoview"
+        android:background="@drawable/journey_logo"/>
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Logoview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text=" Your BMI is calculated based on the details you entered during registration.
+You can always update the details and recalculate."
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/BmiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:text=" Your BMI is : "
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="20sp" />
+
+
+    <TextView
+        android:id="@+id/ClassifyBmiTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/BmiTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="25dp"
+        android:text=" Your Classify is : "
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UpdateDetailsButton"
+        android:layout_marginTop="510dp"
+        android:layout_centerHorizontal="true"
+        android:text="Update Details"
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+    <Button
+        android:id="@+id/CalculateAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/UpdateDetailsButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Calculate again" />
+
+    <ProgressBar
+        android:id="@+id/progressBarBmi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/CalculateAgainButton"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+</RelativeLayout>
