@@ -46,16 +46,16 @@ public class CoachProfileActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        // need to sole the login bag - when you login as a user
+        // need to solve the login bag - when you login as a user
         mEducation = findViewById(R.id.DescriptionTextView);
-        mEducation.setText(mEducation.getText().toString() + CoachCacheUtilities.getEducation(this));
+        mEducation.setText(" "+mEducation.getText().toString() + CoachCacheUtilities.getEducation(this));
 
 
         mFullName = findViewById(R.id.coachNameTextView);
-        mFullName.setText(mFullName.getText().toString() +CoachCacheUtilities.getCoachUserName(this));
+        mFullName.setText(" "+mFullName.getText().toString() +CoachCacheUtilities.getCoachUserName(this));
 
         mExperience = findViewById(R.id.ExperienceTextView);
-        mExperience.setText(mExperience.getText().toString() +CoachCacheUtilities.getExperience(this) +" years");
+        mExperience.setText(" "+mExperience.getText().toString() +CoachCacheUtilities.getExperience(this) +" years");
 
         mPictureImageView = findViewById(R.id.profile_image_view);
         mPictureImageView.setOnClickListener(v -> choosePictureFromGalleryAndUploadToTheFireBase());

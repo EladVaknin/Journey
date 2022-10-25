@@ -73,7 +73,7 @@ public class CoachRegisterActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 handleProgressBar(false);
                 if (task.isSuccessful()) {
-                    UserCoach coach = new UserCoach(mAuth.getCurrentUser().getUid(),userName,email, gender,experience,education,age);
+                    UserCoach coach = new UserCoach(mAuth.getCurrentUser().getUid(),userName,email,experience,education,age, gender);
                     CoachCacheUtilities.CoachCacheUserName(this, userName);
                     CoachCacheUtilities.cacheGender(this, gender);
                     CoachCacheUtilities.cacheEduction(this,education);

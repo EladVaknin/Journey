@@ -8,7 +8,7 @@ import android.content.SharedPreferences;
 public class CoachCacheUtilities {
 
 
-    public static final String COACH_USER_NAME_KEY = "coachUserName";
+    public static final String COACH_USER_NAME_KEY = "userName";
     public static final String AGE_KEY = "age";
     public static final String IMAGE_PROFILE_KEY = "imageProfile";
     public static final String USER_FILE = "user";
@@ -23,9 +23,9 @@ public class CoachCacheUtilities {
         editor.apply();
     }
 
-    public static void CoachCacheUserName(Activity activity, String coachUserName) {
+    public static void CoachCacheUserName(Activity activity, String userName) {
         SharedPreferences.Editor editor = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE).edit();
-        editor.putString(COACH_USER_NAME_KEY, coachUserName);
+        editor.putString(COACH_USER_NAME_KEY, userName);
         editor.apply();
     }
 

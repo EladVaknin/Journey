@@ -1,7 +1,7 @@
 package com.example.myjourney.models;
 
 public class UserCoach {
-    String CoachUserName ,mEmail ,id ;
+    String userName ,mEmail ,id ;
     String Picture;
     String age ;
     String experience;
@@ -9,9 +9,9 @@ public class UserCoach {
     String gender;
     int counter;
 
-    public UserCoach (String id ,String CoachUserName,String mEmail,String experience,String education,String age ,String gender){
+    public UserCoach (String id ,String userName,String mEmail,String experience,String education,String age ,String gender){
         this.id =id;
-        this.CoachUserName = CoachUserName;
+        this.userName = userName;
         this.mEmail = mEmail;
         this.age =age;
         this.education =education;
@@ -20,10 +20,9 @@ public class UserCoach {
     }
 
 
-    public UserCoach (String id ,String CoachUserName,String experience,String education,String age ,String gender){
+    public UserCoach (String id ,String userName,String experience,String education,String age ,String gender){
         this.id =id;
-        this.CoachUserName = CoachUserName;
-        this.mEmail = mEmail;
+        this.userName = userName;
         this.age =age;
         this.education =education;
         this.experience =experience;
@@ -33,11 +32,11 @@ public class UserCoach {
 
 
     public String getCoachUserName() {
-        return CoachUserName;
+        return userName;
     }
 
     public void setCoachUserName(String coachUserName) {
-        CoachUserName = coachUserName;
+        userName = coachUserName;
     }
 
     public String getmEmail() {
