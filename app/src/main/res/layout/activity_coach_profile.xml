@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:id="@+id/profile_image_view"
+        android:layout_width="230dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20sp"
+        android:src="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/coachNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_image_view"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Coach Name: "
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/ExperienceTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/coachNameTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Year of Experience:"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="#FF6E40"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/DescriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ExperienceTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Your description:"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="#FF6E40"
+        android:textSize="20sp" />
+
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ChatCoachDetailsButton"
+        android:layout_marginTop="150dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/DescriptionTextView"
+        android:text="Chat"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UpdateCoachDetailsButton"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ChatCoachDetailsButton"
+        android:text="Update Details"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/LogoutButton"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/UpdateCoachDetailsButton"
+        android:text="Logout"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

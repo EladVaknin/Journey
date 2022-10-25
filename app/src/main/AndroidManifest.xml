@@ -29,6 +29,8 @@
         <activity android:name=".activities.UpdateDetailsActivity"/>
         <activity android:name=".activities.HealthDetailsActivity"/>
         <activity android:name=".activities.PopUpActivity"/>
+        <activity android:name=".activities.CoachProfileActivity"/>
+        <activity android:name=".activities.UpdateCoachDetailsActivity"/>
     </application>
 
 </manifest>
