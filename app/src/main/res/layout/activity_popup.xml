@@ -37,10 +37,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
         android:backgroundTint="@color/white"
-        android:ems="10"
-        android:hint="Input your shoes stats"
+        android:ems="15"
+        android:hint="Input your shoes status"
         android:textColorHint="@color/white"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:textColor="@color/white"
         android:textStyle="italic" />
 

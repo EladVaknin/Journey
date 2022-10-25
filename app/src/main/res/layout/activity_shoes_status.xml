@@ -37,22 +37,21 @@ Therefore, it is recommended to change shoes when you reach the average - 640 ki
         android:layout_below="@id/header"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="40dp"
-        android:text=" Your Shoes  over : "
+        android:text=" Your Shoes  Over : "
         android:textAlignment="center"
         android:textColor="@android:color/holo_orange_dark"
         android:textColorHint="@android:color/holo_orange_dark"
         android:textSize="20sp" />
 
 
-
     <Button
+        android:id="@+id/SetNewShoesButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/SetNewShoesButton"
-        android:layout_marginTop="510dp"
         android:layout_centerHorizontal="true"
-        android:text="Set New Shoes"
-        android:backgroundTint="@android:color/holo_orange_dark" />
+        android:layout_marginTop="510dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Set New Shoes" />
 
 
 

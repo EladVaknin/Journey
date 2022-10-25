@@ -45,7 +45,6 @@ public class PopUpActivity extends AppCompatActivity {
 
     private void preformSaveShoes() {
         String shoes = mSetShoesEditText.getText().toString();
-
         if (mSetShoesEditText == null){
             Toast.makeText(this,"The field is empty",Toast.LENGTH_SHORT).show();
             return;
