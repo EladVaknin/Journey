@@ -5,6 +5,7 @@ public class UserRegular {
     String UserName ,mEmail ,id, gender ;
     String Picture;
     String age ,weight,height;
+    String shoes;
     int counter;
 
 
@@ -20,7 +21,7 @@ public class UserRegular {
 //    }
 
 
-    public UserRegular (String id ,String UserName,String mEmail,String gender,String weight,String height,String age){
+    public UserRegular (String id ,String UserName,String mEmail,String gender,String weight,String height,String age ,String shoes){
         this.id =id;
         this.UserName = UserName;
         this.mEmail = mEmail;
@@ -28,6 +29,7 @@ public class UserRegular {
         this.height=height;
         this.age =age;
         this.weight =weight;
+        this.shoes =shoes;
     }
 
     public UserRegular (String id ,String UserName,String gender,String weight,String height,String age){

@@ -34,7 +34,7 @@ public class ProfileActivity extends AppCompatActivity {
     private static final String USERS_TABLE = "users";
     private Button mBmiButton ,mUpdateJourneyButton,mMyJourneyButton,mShoesStatusButton;
     private Button mCreateAJourney;
-    private Button mLogoutButton;
+    private Button mLogoutButton,mHealthDetailsButton;
     private ImageView mPictureImageView;
     private TextView mFullName ,mLastResult;
     private final DatabaseReference mDbUser = FirebaseDatabase.getInstance().getReference(USERS_TABLE);
@@ -81,6 +81,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         mCreateAJourney = findViewById(R.id.CreatejourneyButton);
         mCreateAJourney.setOnClickListener(v -> redirectToCreateAJourney ());
+
+        mHealthDetailsButton =findViewById(R.id.HealthDetailsButton);
+        mHealthDetailsButton.setOnClickListener(v -> redirectToHealthDetailsScreen());
+    }
+
+    private void redirectToHealthDetailsScreen() {
+        Intent intent = new Intent(ProfileActivity.this,HealthDetailsActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToCreateAJourney() {

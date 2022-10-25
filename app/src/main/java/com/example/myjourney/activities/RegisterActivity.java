@@ -61,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         String weight = mWeightEditText.getText().toString();
         String height = mGHeightEditText.getText().toString();
         String age = mAgeEditText.getText().toString();
+        String shoes = "0";
 
         if (TextUtils.isEmpty(userName)||TextUtils.isEmpty(email) ||TextUtils.isEmpty(gender) ||TextUtils.isEmpty(weight)
                 ||TextUtils.isEmpty(height)||TextUtils.isEmpty(age)|| TextUtils.isEmpty(password)){
@@ -72,12 +73,13 @@ public class RegisterActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 handleProgressBar(false);
                 if (task.isSuccessful()) {
-                    UserRegular user = new UserRegular(mAuth.getCurrentUser().getUid(),userName,email, gender,weight,height,age);
+                    UserRegular user = new UserRegular(mAuth.getCurrentUser().getUid(),userName,email, gender,weight,height,age,shoes);
                     CacheUtilities.cacheUserName(this, userName);
                     CacheUtilities.cacheGender(this, gender);
                     CacheUtilities.cacheWeight(this, weight);
                     CacheUtilities.cacheHeight(this, height);
                     CacheUtilities.cacheAge(this, age);
+                    CacheUtilities.cacheShoes(this,shoes);
                     mDBuser.child(mAuth.getCurrentUser().getUid()).setValue(user);
                     startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                     finish();

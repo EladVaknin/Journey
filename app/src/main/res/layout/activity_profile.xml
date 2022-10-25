@@ -26,6 +26,7 @@
         android:textColor="@android:color/holo_orange_dark"
         android:textColorHint="@android:color/holo_orange_dark"
         android:textSize="20sp" />
+
     <TextView
         android:id="@+id/LastResultTextView"
         android:layout_width="wrap_content"
@@ -87,6 +88,15 @@
         android:layout_below="@id/MyJourneyButton"
         android:text="Update Journey"
         android:backgroundTint="@android:color/holo_orange_dark"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/HealthDetailsButton"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ShoesStatusButton"
+        android:text="Health Details"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
 
     <Button
         android:layout_width="wrap_content"
@@ -94,7 +104,7 @@
         android:id="@+id/LogoutButton"
         android:layout_marginTop="4dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/ShoesStatusButton"
+        android:layout_below="@id/HealthDetailsButton"
         android:text="Logout"
         android:backgroundTint="@android:color/holo_orange_dark"/>
 

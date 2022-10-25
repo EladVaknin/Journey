@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Logoview"
+        android:background="@drawable/journey_logo"/>
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Logoview"
+        android:layout_centerHorizontal="true"
+        android:text="Health Details"
+        android:layout_marginTop="5dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/ageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Age : "
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/holo_orange_dark"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/HeightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ageTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Height :"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="#FF6E40"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/WeightTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/HeightTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Weight :"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="#FF6E40"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/genderTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/WeightTextView"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        android:text="Gender :"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="#FF6E40"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/UpdateDetailsButton"
+        android:layout_marginTop="510dp"
+        android:layout_centerHorizontal="true"
+        android:text="Update Details"
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>

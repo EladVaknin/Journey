@@ -14,6 +14,7 @@ public class CacheUtilities {
     public static final String WEIGHT_KEY = "weight";
     public static final String IMAGE_PROFILE_KEY = "imageProfile";
     public static final String USER_FILE = "user";
+    public static final String SHOES_KEY = "shoes";
 
 /// caches
     public static void cacheUserName(Activity activity, String userName) {
@@ -52,6 +53,12 @@ public class CacheUtilities {
         editor.apply();
     }
 
+    public static void cacheShoes(Activity activity, String shoes) {
+        SharedPreferences.Editor editor = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE).edit();
+        editor.putString(SHOES_KEY, shoes);
+        editor.apply();
+    }
+
 
 
 
@@ -87,7 +94,10 @@ public class CacheUtilities {
     public static String getGender(Activity activity) {
         SharedPreferences prefs = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE);
         return prefs.getString(GENDER_KEY, "");
-
+    }
+    public static String getShoes(Activity activity) {
+        SharedPreferences prefs = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE);
+        return prefs.getString(SHOES_KEY, "");
     }
 
     /// clear
