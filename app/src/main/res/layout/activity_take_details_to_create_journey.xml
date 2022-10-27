@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Logoview"
+        android:background="@drawable/journey_logo"/>
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Logoview"
+        android:layout_centerHorizontal="true"
+        android:text="Create Journey"
+        android:layout_marginTop="10dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/palne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true"
+        android:text="Tell us your plane : "
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="13sp"
+        android:textStyle="normal" />
+
+
+    <EditText
+        android:id="@+id/editTextTarget"
+        android:layout_below="@id/palne"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:layout_marginTop="10dp"
+        android:ems="15"
+        android:hint="Input you Goal (5/10/21.2 KM)"
+        android:textColorHint="@color/white"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/RunningStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextTarget"
+        android:layout_centerHorizontal="true"
+        android:text="Tell us how mach KM you running in a week: "
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="13sp"
+        android:textStyle="normal" />
+
+
+    <EditText
+        android:id="@+id/editTextKmRangeStatus"
+        android:layout_below="@id/RunningStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/white"
+        android:ems="15"
+        android:hint="Input you Running week range"
+        android:textColorHint="@color/white"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textStyle="italic" />
+
+
+    <TextView
+        android:id="@+id/PaceStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextKmRangeStatus"
+        android:layout_centerHorizontal="true"
+        android:text="Tell us your average running pace: "
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="13sp"
+        android:textStyle="normal" />
+
+
+    <EditText
+        android:id="@+id/editTextPaceStatus"
+        android:layout_below="@id/PaceStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/white"
+        android:ems="15"
+        android:hint="Input you Pace status min/km (Ex - 5:30)"
+        android:textColorHint="@color/white"
+        android:inputType="numberDecimal"
+        android:textColor="@color/white"
+        android:textStyle="italic" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextPaceStatus"
+        android:id="@+id/CalculJourneyButton"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:text="Calculate Journey "
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+
+
+    <ProgressBar
+        android:id="@+id/progressBarJourney"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/CalculJourneyButton"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible" />
+
+
+</RelativeLayout>

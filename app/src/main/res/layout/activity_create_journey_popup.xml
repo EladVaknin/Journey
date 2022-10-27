@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/Logoview"
+        android:background="@drawable/journey_logo"/>
+
+
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Logoview"
+        android:layout_centerHorizontal="true"
+        android:text="Create Journey"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="20sp"
+        android:textStyle="normal" />
+
+
+    <TextView
+        android:id="@+id/textViewExplainPopup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/header"
+        android:layout_centerHorizontal="true"
+        android:text="In order to create the exact journey especially for you, we need reliable information from you regarding your current physical fitness.
+If you have any medical problems please consult a doctor and a qualified trainer before using this application.
+lets start !"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="15sp"
+        android:textStyle="normal" />
+
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/NextPopUpButton"
+        android:layout_marginTop="380dp"
+        android:layout_centerHorizontal="true"
+        android:text="Start Journey "
+        android:backgroundTint="@android:color/holo_orange_dark" />
+
+
+
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
