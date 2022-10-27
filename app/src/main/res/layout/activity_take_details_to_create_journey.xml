@@ -81,7 +81,7 @@
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/white"
         android:ems="15"
-        android:hint="Input you Running week range"
+        android:hint="Input your current Running week range"
         android:textColorHint="@color/white"
         android:inputType="numberDecimal"
         android:textColor="@color/white"
