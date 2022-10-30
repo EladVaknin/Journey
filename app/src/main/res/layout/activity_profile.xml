@@ -45,7 +45,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="250dp"
         android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Create Journey" />
 
@@ -62,10 +62,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/BmiButton"
+        android:id="@+id/ChatButton"
         android:layout_marginTop="4dp"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/UpdateJourneyButton"
+        android:text="Chat with coach"
+        android:backgroundTint="@android:color/holo_orange_dark"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/BmiButton"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/ChatButton"
         android:text="BMI"
         android:backgroundTint="@android:color/holo_orange_dark"/>
 

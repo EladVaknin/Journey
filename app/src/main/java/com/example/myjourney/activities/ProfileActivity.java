@@ -36,6 +36,7 @@ public class ProfileActivity extends AppCompatActivity {
     private Button mCreateAJourney;
     private Button mLogoutButton,mHealthDetailsButton;
     private ImageView mPictureImageView;
+    private Button mChatButton;
     private TextView mFullName ,mLastResult;
     private final DatabaseReference mDbUser = FirebaseDatabase.getInstance().getReference(USERS_TABLE);
 
@@ -52,6 +53,8 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void initViews() {
+        mChatButton=findViewById(R.id.ChatButton);
+        mChatButton.setOnClickListener(v -> redirectToChatScreen());
         mLogoutButton = findViewById(R.id.LogoutButton);
         mLogoutButton.setOnClickListener(v -> redirectToLogout());
 
@@ -84,6 +87,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         mHealthDetailsButton =findViewById(R.id.HealthDetailsButton);
         mHealthDetailsButton.setOnClickListener(v -> redirectToHealthDetailsScreen());
+    }
+
+    private void redirectToChatScreen() {
     }
 
     private void redirectToHealthDetailsScreen() {
