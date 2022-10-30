@@ -54,7 +54,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     private void initViews() {
         mChatButton=findViewById(R.id.ChatButton);
-        mChatButton.setOnClickListener(v -> redirectToChatScreen());
+        mChatButton.setOnClickListener(v -> redirectToSearchCoachScreen());
+
         mLogoutButton = findViewById(R.id.LogoutButton);
         mLogoutButton.setOnClickListener(v -> redirectToLogout());
 
@@ -89,7 +90,7 @@ public class ProfileActivity extends AppCompatActivity {
         mHealthDetailsButton.setOnClickListener(v -> redirectToHealthDetailsScreen());
     }
 
-    private void redirectToChatScreen() {
+    private void redirectToSearchCoachScreen() {
     }
 
     private void redirectToHealthDetailsScreen() {

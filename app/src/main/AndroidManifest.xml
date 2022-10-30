@@ -32,6 +32,7 @@
         <activity android:name=".activities.CoachProfileActivity"/>
         <activity android:name=".activities.UpdateCoachDetailsActivity"/>
         <activity android:name=".activities.TakeDetailsForJourneyActivity"/>
+        <activity android:name=".activities.SearchCoachActivity"/>
     </application>
 
 </manifest>
