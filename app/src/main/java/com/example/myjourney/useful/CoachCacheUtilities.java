@@ -8,15 +8,22 @@ import android.content.SharedPreferences;
 public class CoachCacheUtilities {
 
 
-    public static final String COACH_USER_NAME_KEY = "userName";
+    public static final String COACH_USER_NAME_KEY = "CoachUserName";
     public static final String AGE_KEY = "age";
     public static final String IMAGE_PROFILE_KEY = "imageProfile";
     public static final String USER_FILE = "user";
     public static final String EXPERIENCE = "experience";
     public static final String EDUCATION = "education";
     public static final String GENDER_KEY = "gender";
+    public static final String ADDRESS_KEY = "address";
 
     /// caches
+    public static void cacheAddress (Activity activity, String address) {
+        SharedPreferences.Editor editor = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE).edit();
+        editor.putString(ADDRESS_KEY, address);
+        editor.apply();
+    }
+
     public static void cacheGender (Activity activity, String gender) {
         SharedPreferences.Editor editor = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE).edit();
         editor.putString(GENDER_KEY, gender);
@@ -59,6 +66,10 @@ public class CoachCacheUtilities {
 
 
     // gets
+    public static String getAddress(Activity activity) {
+        SharedPreferences prefs = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE);
+        return prefs.getString(ADDRESS_KEY, "");
+    }
 
     public static String getCoachUserName(Activity activity) {
         SharedPreferences prefs = activity.getSharedPreferences(USER_FILE, MODE_PRIVATE);

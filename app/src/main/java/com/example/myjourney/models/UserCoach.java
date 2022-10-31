@@ -1,28 +1,31 @@
 package com.example.myjourney.models;
 
 public class UserCoach {
-    String userName ,mEmail ,id ;
+    String CoachUserName ,mEmail ,id ;
     String Picture;
     String age ;
+    String address;
     String experience;
     String education;
     String gender;
     int counter;
 
-    public UserCoach (String id ,String userName,String mEmail,String experience,String education,String age ,String gender){
+    public UserCoach (String id ,String CoachUserName,String mEmail,String experience,String education,String age ,String gender,String address){
         this.id =id;
-        this.userName = userName;
+        this.CoachUserName = CoachUserName;
         this.mEmail = mEmail;
         this.age =age;
         this.education =education;
         this.experience =experience;
         this.gender =gender;
+        this.address = address;
+
     }
 
 
-    public UserCoach (String id ,String userName,String experience,String education,String age ,String gender){
+    public UserCoach (String id ,String CoachUserName,String experience,String education,String age ,String gender){
         this.id =id;
-        this.userName = userName;
+        this.CoachUserName = CoachUserName;
         this.age =age;
         this.education =education;
         this.experience =experience;
@@ -32,11 +35,11 @@ public class UserCoach {
 
 
     public String getCoachUserName() {
-        return userName;
+        return CoachUserName;
     }
 
     public void setCoachUserName(String coachUserName) {
-        userName = coachUserName;
+        CoachUserName = coachUserName;
     }
 
     public String getmEmail() {
@@ -93,6 +96,14 @@ public class UserCoach {
 
     public void setCounter(int counter) {
         this.counter = counter;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
 }

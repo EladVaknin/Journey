@@ -25,6 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CoachRegisterActivity extends AppCompatActivity {
     private EditText mCoachUserNameEditText, mPasswordEditText, mEmailEditText, mGenderEditText,mAgeEditText,mExperienceEditText,mEducationEditText;
     private Button mRegisterButton;
+    private EditText mAddress;
     private ProgressBar mProgressBarRegister;
     public static final String USER_TABLE = "users";
     private final DatabaseReference mDBuser = FirebaseDatabase.getInstance().getReference(USER_TABLE);
@@ -51,6 +52,7 @@ public class CoachRegisterActivity extends AppCompatActivity {
         mAgeEditText = findViewById(R.id.editTextAge);
         mEducationEditText = findViewById(R.id.editTextEducation);
         mExperienceEditText =findViewById(R.id.editTextExperience);
+        mAddress = findViewById(R.id.editTextAddress);
     }
 
     private void preformRegister() {
@@ -61,9 +63,10 @@ public class CoachRegisterActivity extends AppCompatActivity {
         String age = mAgeEditText.getText().toString();
         String experience = mExperienceEditText.getText().toString();
         String education = mEducationEditText.getText().toString();
+        String address = mAddress.getText().toString();
 
         if (TextUtils.isEmpty(userName)||TextUtils.isEmpty(email) ||TextUtils.isEmpty(gender) ||TextUtils.isEmpty(education)
-                ||TextUtils.isEmpty(experience)||TextUtils.isEmpty(age)|| TextUtils.isEmpty(password)){
+                ||TextUtils.isEmpty(experience)||TextUtils.isEmpty(age)|| TextUtils.isEmpty(password)|| TextUtils.isEmpty(address)){
             Toast.makeText(this,"Some of the fields is empty",Toast.LENGTH_SHORT).show();
             return;
         }
@@ -73,12 +76,13 @@ public class CoachRegisterActivity extends AppCompatActivity {
             mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(task -> {
                 handleProgressBar(false);
                 if (task.isSuccessful()) {
-                    UserCoach coach = new UserCoach(mAuth.getCurrentUser().getUid(),userName,email,experience,education,age, gender);
+                    UserCoach coach = new UserCoach(mAuth.getCurrentUser().getUid(),userName,email,experience,education,age, gender,address);
                     CoachCacheUtilities.CoachCacheUserName(this, userName);
                     CoachCacheUtilities.cacheGender(this, gender);
                     CoachCacheUtilities.cacheEduction(this,education);
                     CoachCacheUtilities.cacheExperience(this,experience);
                     CoachCacheUtilities.cacheAge(this, age);
+                    CoachCacheUtilities.cacheAddress(this,address);
                     mDBuser.child(mAuth.getCurrentUser().getUid()).setValue(coach);
                     startActivity(new Intent(getApplicationContext(), CoachProfileActivity.class));
                     finish();
