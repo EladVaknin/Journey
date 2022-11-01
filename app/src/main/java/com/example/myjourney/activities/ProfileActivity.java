@@ -91,6 +91,8 @@ public class ProfileActivity extends AppCompatActivity {
     }
 
     private void redirectToSearchCoachScreen() {
+        Intent intent = new Intent(ProfileActivity.this,SearchCoachActivity.class);
+        startActivity(intent);
     }
 
     private void redirectToHealthDetailsScreen() {

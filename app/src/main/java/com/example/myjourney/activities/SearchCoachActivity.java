@@ -58,12 +58,13 @@ public class SearchCoachActivity extends AppCompatActivity {
         mSearchEditText = findViewById(R.id.search_edit_text);
 
         mSearchButton = findViewById(R.id.search_button);
-//        mSearchButton.setOnClickListener(v -> performSearch());
+        mSearchButton.setOnClickListener(v -> performSearch());
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mAdapter = new CoachRecyclerAdapter(this);
+        mAdapter.setClickListener(this);
 //        mAdapter.setClickListener(this);          /////////////need to check
 
         mRecyclerView.setAdapter(mAdapter);
@@ -87,9 +88,10 @@ public class SearchCoachActivity extends AppCompatActivity {
                 for (DataSnapshot CoachUser : dataSnapshot.getChildren()) {
                     if (CoachUser.child("CoachUserName").exists()) {      // item to coach
 //                        for (DataSnapshot item : CoachUser.child("CoachUserName").getChildren()) {
-//                            String description = (String) item.child("desc").getValue(); // pull all profile
+                            String searchCoachUserName = (String) CoachUser.child("coachUserName").getValue(); // pull all profile
+                            String searchCoachAddress = (String) CoachUser.child("address").getValue(); // pull all profile
 //                            Log.d(TAG, "Description -" + description);
-//                            if (description.contains(searchString)) {
+                            if (searchCoachAddress.contains(searchString) || searchCoachUserName.contains(searchString)) {
                                 String age = (String) CoachUser.child("age").getValue();
                                 String imageUrl = (String) CoachUser.child("profileUrl").getValue();
                                 String address = (String) CoachUser.child("address").getValue();
@@ -100,8 +102,7 @@ public class SearchCoachActivity extends AppCompatActivity {
                                 CoachList.add(new UserCoach(CoachUserName, imageUrl, age, address, experience,education));
                             }
                         }
-
-//                    }
+                    }
 //                }
                 mAdapter.setNewItems(CoachList);
                 recyclerViewShow(true);

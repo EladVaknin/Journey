@@ -146,7 +146,7 @@
         android:id="@+id/editTextAddress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/editTextGender"
+        android:layout_below="@id/editTextAge"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="100dp"
         android:layout_marginBottom="80dp"
@@ -163,7 +163,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/SingInButtonCoach"
-        android:layout_marginTop="525dp"
+        android:layout_marginTop="595dp"
         android:layout_centerHorizontal="true"
         android:text="Sign in"
         android:backgroundTint="@android:color/holo_orange_dark" />

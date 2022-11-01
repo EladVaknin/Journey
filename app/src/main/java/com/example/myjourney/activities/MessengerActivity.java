@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myjourney.R;
 import com.example.myjourney.adapter.ChatAdapter;
 import com.example.myjourney.models.ChatMessage;
 import com.example.myjourney.useful.CacheUtilities;
@@ -86,7 +87,7 @@ public class MessengerActivity extends AppCompatActivity {
 
 
     private void initViews() {
-        mRatingButton = findViewById(R.id.rating_button);
+//        mRatingButton = findViewById(R.id.rating_button);
         TextView header = findViewById(R.id.header);
         header.setText(mToUser);
         mMsgEditText = findViewById(R.id.msgEditBox);
@@ -97,7 +98,7 @@ public class MessengerActivity extends AppCompatActivity {
         mRecyclerView.setAdapter(mChatAdapter);
         mSendMsgImageView = findViewById(R.id.send_msg_button);
         mSendMsgImageView.setOnClickListener(v -> sendMessage());
-        
+
 //        mRatingButton.setOnClickListener(v -> redirectToActivity(RatingProfileActivity.class));   // delete
     }
 

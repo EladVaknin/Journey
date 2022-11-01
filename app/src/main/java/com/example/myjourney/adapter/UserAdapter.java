@@ -22,7 +22,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ItemViewHolder
     private final List<String> mData = new ArrayList<>();
     private final HashMap<String,String> mPhotoUrlsHashMap= new HashMap();
     private final LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
+    private CoachClickListener mClickListener;
 
     // data is passed into the constructor
     public UserAdapter(Context context) {
@@ -83,12 +83,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ItemViewHolder
 
 
     // allows clicks events to be caught
-    public void setClickListener(ItemClickListener itemClickListener) {
-        this.mClickListener = itemClickListener;
+    public void setClickListener(CoachClickListener CoachClickListener) {
+        this.mClickListener = CoachClickListener;
     }
 
     // parent activity will implement this method to respond to click events
-    public interface ItemClickListener {
+    public interface CoachClickListener {
         void onUserClicked(String userName);
     }
 }
