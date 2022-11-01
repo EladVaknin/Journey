@@ -18,7 +18,6 @@ public class ChatAdapter extends RecyclerView.Adapter<ChatAdapter.MessageViewHol
 
     private final List<ChatMessage> chatMessageList;
     private final String senderId;
-
     public static final int VIEW_TYPE_SEND = 1;
     public static final int VIEW_TYPE_RECIVED = 2;
 

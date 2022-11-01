@@ -26,10 +26,10 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchCoachActivity extends AppCompatActivity {
+public class SearchCoachActivity extends AppCompatActivity implements CoachRecyclerAdapter.CoachClickListener{
 
     public static final String USERS_TABLE = "users";
-    private static final String TAG = "SearchActivity";
+//    private static final String TAG = "SearchActivity";
     private EditText mSearchEditText;
     private Button mSearchButton;
     private ProgressBar mProgressBar;
@@ -41,7 +41,6 @@ public class SearchCoachActivity extends AppCompatActivity {
 
 
     /////////////////////////////////////////////////////////////////////
-    ////////// - work on coach row
     ///////////- change item to coach logic
     /////// need to made tests
 
@@ -65,7 +64,6 @@ public class SearchCoachActivity extends AppCompatActivity {
 
         mAdapter = new CoachRecyclerAdapter(this);
         mAdapter.setClickListener(this);
-//        mAdapter.setClickListener(this);          /////////////need to check
 
         mRecyclerView.setAdapter(mAdapter);
     }
@@ -77,7 +75,6 @@ public class SearchCoachActivity extends AppCompatActivity {
             mProgressBar.setVisibility(shouldShow ? View.INVISIBLE : View.VISIBLE);
         }
     }
-  /// need to change item to coach
     private void performSearch() {
         recyclerViewShow(false);
         final String searchString = mSearchEditText.getText().toString();
@@ -86,11 +83,11 @@ public class SearchCoachActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final List<UserCoach> CoachList = new ArrayList<>();
                 for (DataSnapshot CoachUser : dataSnapshot.getChildren()) {
-                    if (CoachUser.child("CoachUserName").exists()) {      // item to coach
-//                        for (DataSnapshot item : CoachUser.child("CoachUserName").getChildren()) {
-                            String searchCoachUserName = (String) CoachUser.child("coachUserName").getValue(); // pull all profile
-                            String searchCoachAddress = (String) CoachUser.child("address").getValue(); // pull all profile
-//                            Log.d(TAG, "Description -" + description);
+                    if (CoachUser.child("coachUserName").exists()) {      // if coach user is in firebase
+                        System.out.println("Test Test Test");
+                            String searchCoachUserName = (String) CoachUser.child("coachUserName").getValue(); // search by name
+                            String searchCoachAddress = (String) CoachUser.child("address").getValue(); //search by address
+
                             if (searchCoachAddress.contains(searchString) || searchCoachUserName.contains(searchString)) {
                                 String age = (String) CoachUser.child("age").getValue();
                                 String imageUrl = (String) CoachUser.child("profileUrl").getValue();
@@ -99,11 +96,13 @@ public class SearchCoachActivity extends AppCompatActivity {
                                 String education = (String) CoachUser.child("education").getValue();
                                 String CoachUserName = (String) CoachUser.child("CoachUserName").getValue();
                                 String gender = (String) CoachUser.child("gender").getValue();
+                                System.out.println("age  ="+age);
+                                System.out.println("address  ="+address);
+                                System.out.println("experience  ="+experience);
                                 CoachList.add(new UserCoach(CoachUserName, imageUrl, age, address, experience,education));
                             }
                         }
                     }
-//                }
                 mAdapter.setNewItems(CoachList);
                 recyclerViewShow(true);
             }

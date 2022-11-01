@@ -34,6 +34,7 @@
         <activity android:name=".activities.TakeDetailsForJourneyActivity"/>
         <activity android:name=".activities.SearchCoachActivity"/>
         <activity android:name=".activities.MessengerActivity"/>
+        <activity android:name=".activities.ClodMessengerActivity"/>
     </application>
 
 </manifest>

@@ -85,8 +85,9 @@ public class CoachRecyclerAdapter extends RecyclerView.Adapter<CoachRecyclerAdap
             mExpirenceTextView = coachView.findViewById(R.id.CoachExperience);
             mEducationTextView = coachView.findViewById(R.id.CoachEducation);
             mCoachUserNameTextView = coachView.findViewById(R.id.CoachUserName);
-            mChatButton = coachView.findViewById(R.id.chat_button);
             mItemImage = coachView.findViewById(R.id.image_item);
+
+            mChatButton = coachView.findViewById(R.id.chat_button);
             mChatButton.setOnClickListener(v -> mClickListener.onCoachClick(mData.get(getAdapterPosition())));
 
         }
