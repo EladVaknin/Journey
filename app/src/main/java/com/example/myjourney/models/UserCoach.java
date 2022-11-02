@@ -23,14 +23,22 @@ public class UserCoach {
     }
 
 
-    public UserCoach (String id ,String CoachUserName,String experience,String education,String age ,String gender){
+    public UserCoach (String id ,String CoachUserName,String experience,String education,String age ,String address){
         this.id =id;
         this.CoachUserName = CoachUserName;
         this.age =age;
         this.education =education;
         this.experience =experience;
-        this.gender =gender;
+        this.address =address;
     }
+//    public UserCoach (String picture ,String CoachUserName,String experience,String education,String age ,String address){
+//        this.Picture =picture;
+//        this.CoachUserName = CoachUserName;
+//        this.age =age;
+//        this.education =education;
+//        this.experience =experience;
+//
+//    }
 
 
 

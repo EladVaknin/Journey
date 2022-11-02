@@ -88,20 +88,24 @@ public class SearchCoachActivity extends AppCompatActivity implements CoachRecyc
                             String searchCoachUserName = (String) CoachUser.child("coachUserName").getValue(); // search by name
                             String searchCoachAddress = (String) CoachUser.child("address").getValue(); //search by address
 
-                            if (searchCoachAddress.contains(searchString) || searchCoachUserName.contains(searchString)) {
+//                            if (searchCoachAddress.contains(searchString) || searchCoachUserName.contains(searchString)) {
                                 String age = (String) CoachUser.child("age").getValue();
                                 String imageUrl = (String) CoachUser.child("profileUrl").getValue();
                                 String address = (String) CoachUser.child("address").getValue();
                                 String experience = (String) CoachUser.child("experience").getValue();
                                 String education = (String) CoachUser.child("education").getValue();
-                                String CoachUserName = (String) CoachUser.child("CoachUserName").getValue();
+                                String CoachUserName = (String) CoachUser.child("coachUserName").getValue();
                                 String gender = (String) CoachUser.child("gender").getValue();
+                                // not printing - it's dont enter to the if
                                 System.out.println("age  ="+age);
                                 System.out.println("address  ="+address);
                                 System.out.println("experience  ="+experience);
-                                CoachList.add(new UserCoach(CoachUserName, imageUrl, age, address, experience,education));
+                                System.out.println("coach user name  ="+CoachUserName);
+                                System.out.println("image = " + imageUrl);
+//                                CoachList.add(new UserCoach(CoachUserName, imageUrl, age, address, experience,education));
+                                CoachList.add(new UserCoach(imageUrl, CoachUserName, experience,education,age,address));
                             }
-                        }
+//                        }
                     }
                 mAdapter.setNewItems(CoachList);
                 recyclerViewShow(true);
