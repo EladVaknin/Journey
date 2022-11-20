@@ -48,7 +48,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ItemViewHolder
 
 
     // total number of rows
-    @Override
+    @Override     // Override from recycler view class
     public int getItemCount() {
         return mData.size();
     }

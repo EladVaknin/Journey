@@ -41,14 +41,14 @@ public class ProfileActivity extends AppCompatActivity {
     private final DatabaseReference mDbUser = FirebaseDatabase.getInstance().getReference(USERS_TABLE);
 
 
-    ///////// build the main algoritem ////
-    //////// build the shoes status page/////
+    ///////// build the main algorithm ////
+
 
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_example_profile);
         initViews();
     }
 

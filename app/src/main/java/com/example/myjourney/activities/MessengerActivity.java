@@ -91,11 +91,15 @@ public class MessengerActivity extends AppCompatActivity {
         TextView header = findViewById(R.id.header);
         header.setText(mToUser);
         mMsgEditText = findViewById(R.id.msgEditBox);
+
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         mChatMessages = new ArrayList<>();
         mChatAdapter = new ChatAdapter(mChatMessages, mToUser);
+
         mRecyclerView.setAdapter(mChatAdapter);
+
         mSendMsgImageView = findViewById(R.id.send_msg_button);
         mSendMsgImageView.setOnClickListener(v -> sendMessage());
 
@@ -118,9 +122,9 @@ public class MessengerActivity extends AppCompatActivity {
     }
 
 
-    private void redirectToActivity(Class<?> cls) {
-        Intent intent = new Intent(MessengerActivity.this, cls);
-        startActivity(intent);
-    }
+//    private void redirectToActivity(Class<?> cls) {
+//        Intent intent = new Intent(MessengerActivity.this, cls);
+//        startActivity(intent);
+//    }
 
 }

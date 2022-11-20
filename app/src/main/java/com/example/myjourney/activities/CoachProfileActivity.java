@@ -76,8 +76,9 @@ public class CoachProfileActivity extends AppCompatActivity {
 
     }
 
-    private void redirctToChat() {
+    private void redirctToChat() {     // need to implements
     }
+
 
     private void choosePictureFromGalleryAndUploadToTheFireBase() {
         Intent openGalleryIntent = new Intent(Intent.ACTION_GET_CONTENT);

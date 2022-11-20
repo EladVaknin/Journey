@@ -59,7 +59,7 @@ public class ClodMessengerActivity extends AppCompatActivity implements UserAdap
         fetchData();
     }
 
-    private void fetchData() {
+    private void fetchData() {   // pull data
         mDbUser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -73,9 +73,7 @@ public class ClodMessengerActivity extends AppCompatActivity implements UserAdap
                 mDb.collection("Chat").
 
                         whereEqualTo(MessengerActivity.KEY_SEND_TO, clientUserName).
-
                         get().
-
                         addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                             @Override
                             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -121,15 +119,20 @@ public class ClodMessengerActivity extends AppCompatActivity implements UserAdap
     private void initViews() {
         mProgressBar = findViewById(R.id.progressBar);
         mSearchEditText = findViewById(R.id.search_edit_text);
+
         mSearchButton = findViewById(R.id.search_button);
         mSearchButton.setOnClickListener(v -> performSearch());
+
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         mAdapter = new UserAdapter(this);
         mAdapter.setClickListener(this);
+
         mRecyclerView.setAdapter(mAdapter);
         recyclerViewShow(false);
     }
+
 
     private void recyclerViewShow(boolean shouldShow) {
         if (mRecyclerView != null && mProgressBar != null) {
@@ -137,6 +140,7 @@ public class ClodMessengerActivity extends AppCompatActivity implements UserAdap
             mProgressBar.setVisibility(shouldShow ? View.INVISIBLE : View.VISIBLE);
         }
     }
+
 
     private void performSearch() {
         recyclerViewShow(false);

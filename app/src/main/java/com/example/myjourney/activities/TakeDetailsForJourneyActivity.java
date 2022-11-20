@@ -50,6 +50,7 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
         String paceStatus = mPaceStatus.getText().toString();
         String currentRunningStatus = mRunningStatus.getText().toString();
         String age = CacheUtilities.getAge(this);
+        String gender = CacheUtilities.getGender(this);
 
 
         // checks if we got valid details
@@ -99,6 +100,10 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
 
 
         // the groups by age,pace status, current running status.
+
+
+
+
 
     }
 

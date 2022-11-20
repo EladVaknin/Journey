@@ -30,7 +30,7 @@ public class BmiActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_bmi);
+        setContentView(R.layout.activity_bmi);    // tha argument is view type
         initViews ();
     }
 

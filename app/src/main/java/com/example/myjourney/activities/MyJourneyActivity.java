@@ -10,6 +10,7 @@ import com.example.myjourney.R;
 public class MyJourneyActivity extends AppCompatActivity {
 
 
+//// in this class i will show the results of the journey calculate in recycler view (like the search class)
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
