@@ -96,12 +96,12 @@ public class SearchCoachActivity extends AppCompatActivity implements CoachRecyc
                                 String education = (String) CoachUser.child("education").getValue();
                                 String CoachUserName = (String) CoachUser.child("coachUserName").getValue();
                                 String gender = (String) CoachUser.child("gender").getValue();
-                                // not printing - it's dont enter to the if
-                                System.out.println("age  ="+age);
-                                System.out.println("address  ="+address);
-                                System.out.println("experience  ="+experience);
-                                System.out.println("coach user name  ="+CoachUserName);
-                                System.out.println("image = " + imageUrl);
+//                                // not printing - it's dont enter to the if
+//                                System.out.println("age  ="+age);
+//                                System.out.println("address  ="+address);
+//                                System.out.println("experience  ="+experience);
+//                                System.out.println("coach user name  ="+CoachUserName);
+//                                System.out.println("image = " + imageUrl);
 //                                CoachList.add(new UserCoach(CoachUserName, imageUrl, age, address, experience,education));
                                 CoachList.add(new UserCoach(imageUrl, CoachUserName, experience,education,age,address));
                             }
