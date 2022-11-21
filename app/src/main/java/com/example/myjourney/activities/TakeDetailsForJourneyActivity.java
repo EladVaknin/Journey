@@ -13,10 +13,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myjourney.R;
+import com.example.myjourney.models.PracticeBlock;
+import com.example.myjourney.models.UserCoach;
 import com.example.myjourney.useful.CacheUtilities;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class TakeDetailsForJourneyActivity extends AppCompatActivity {
     private AlertDialog.Builder dialogBuildr;
@@ -81,29 +86,146 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
         String age = CacheUtilities.getAge(this);
         String gender = CacheUtilities.getGender(this);
 
+
+        double PaceStatusToProgram = Double.parseDouble(paceStatus);
+        double RunningDistanceStatusToProgram = Double.parseDouble(currentRunningStatus);
+        int counterWeeks = 1;
+
         // i need to create child in firebase that hold all the practice block
 
-        while (weeks == 0){   // we build the program from end to start
             if (group == 1){     // or we need to check the if and then do the while
-                //// do something and create practice block
-                weeks--;
-            }else if(group ==2){
-                //// do something and create practice block
-                weeks--;
-            }else if(group ==3){
-                //// do something and create practice block
-                weeks--;
-            }else if(group ==4){
-                //// do something and create practice block
-                weeks--;
-            }else if(group ==5){
-                //// do something and create practice block
-                weeks--;
+                while (counterWeeks == weeks) {   // we build the program from end to start
+                    final List<PracticeBlock> BlockList = new ArrayList<>();
+                    PracticeBlock block = new PracticeBlock(counterWeeks,PaceStatusToProgram,RunningDistanceStatusToProgram);  //week,pace,distance
+                    // need to insert the block to the firebase and add to block list
+                    BlockList.add(block);
+
+                    // update program: (in this case we have young man with good fitness)
+                    counterWeeks++;
+                    RunningDistanceStatusToProgram += 1.0;  //add one kilometer in week
+                    if (counterWeeks%2 == 0){     // need to think about this con
+                        PaceStatusToProgram -= 0.1;  // add pace every two weeks
+                    }
+
+                    /// need to think how to made 3 practices in a week
+                }
+            }else if(group == 2){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 3){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 4){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 5){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 6){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 7){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 8){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 9){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 10){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 11){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 12){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+
+            }else if(group == 13){       ////// start female
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 14){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 15){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 16){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 17){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 18){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 19){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 20){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 21){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 22){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 23){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
+            }else if(group == 24){
+                while (weeks == 0) {   // we build the program from end to start
+                    //// do something and create practice block
+                    weeks--;
+                }
             }
-
-        }
-
-
     }
 
     private boolean CheckValidTarget() {
@@ -193,6 +315,39 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
             group = 11;  //  older still good fitness
         }else if (gender == "male" && Integer.parseInt(age) >= 46 &&Integer.parseInt(age) <= 50 && Integer.parseInt(currentRunningStatus) == 0) {
             group = 12;  //  older but bad fitness
+
+
+            ///// female //// age 19-33
+        }else if (gender == "female" && Integer.parseInt(age) >= 19 &&Integer.parseInt(age) <= 33 && Integer.parseInt(currentRunningStatus) >= 10){
+            group = 13;  // good fitness
+        }else if (gender == "female" && Integer.parseInt(age) >= 19 &&Integer.parseInt(age) <= 33 && Integer.parseInt(currentRunningStatus) >= 5){
+            group = 14;  // still good fitness
+        }else if (gender == "female" && Integer.parseInt(age) >= 19 &&Integer.parseInt(age) <= 33 && Integer.parseInt(currentRunningStatus) == 0){
+            group = 15;  // young man but bad fitness
+
+            // /age 34 -40
+        }else if (gender == "female" && Integer.parseInt(age) >= 34 &&Integer.parseInt(age) <= 40 && Integer.parseInt(currentRunningStatus) >= 10) {
+            group = 16;  // adult good fitness
+        } else if (gender == "female" && Integer.parseInt(age) >= 34 &&Integer.parseInt(age) <= 40 && Integer.parseInt(currentRunningStatus) >= 5) {
+            group = 17;  // adult still good fitness
+        }else if (gender == "female" && Integer.parseInt(age) >= 34 &&Integer.parseInt(age) <= 40 && Integer.parseInt(currentRunningStatus) == 0) {
+            group = 18;  // adult but bad fitness
+
+            ///// age 41 - 45
+        }else if (gender == "female" && Integer.parseInt(age) >= 41 &&Integer.parseInt(age) <= 44 && Integer.parseInt(currentRunningStatus) >= 10) {
+            group = 19;  // getting older good fitness
+        } else if (gender == "female" && Integer.parseInt(age) >= 41 &&Integer.parseInt(age) <= 44 && Integer.parseInt(currentRunningStatus) >= 5) {
+            group = 20;  // getting older still good fitness
+        }else if (gender == "female" && Integer.parseInt(age) >= 41 &&Integer.parseInt(age) <= 44 && Integer.parseInt(currentRunningStatus) == 0) {
+            group = 21;  // getting older but bad fitness
+
+            /////// age 46-50
+        }else if (gender == "female" && Integer.parseInt(age) >= 46 &&Integer.parseInt(age) <= 50 && Integer.parseInt(currentRunningStatus) >= 10) {
+            group = 22;  //  older good fitness
+        } else if (gender == "female" && Integer.parseInt(age) >= 46 &&Integer.parseInt(age) <= 50 && Integer.parseInt(currentRunningStatus) >= 5) {
+            group = 23;  //  older still good fitness
+        }else if (gender == "female" && Integer.parseInt(age) >= 46 &&Integer.parseInt(age) <= 50 && Integer.parseInt(currentRunningStatus) == 0) {
+            group = 24;  //  older but bad fitness
         }
 
         return group;
