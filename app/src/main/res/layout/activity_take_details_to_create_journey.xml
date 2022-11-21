@@ -118,14 +118,14 @@
         android:textStyle="italic" />
 
     <Button
+        android:id="@+id/CalculJourneyButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/editTextPaceStatus"
-        android:id="@+id/CalculJourneyButton"
-        android:layout_marginTop="30dp"
         android:layout_centerHorizontal="true"
-        android:text="Calculate Journey "
-        android:backgroundTint="@android:color/holo_orange_dark" />
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Calculate Journey " />
 
 
 

@@ -84,7 +84,7 @@ public class SearchCoachActivity extends AppCompatActivity implements CoachRecyc
                 final List<UserCoach> CoachList = new ArrayList<>();
                 for (DataSnapshot CoachUser : dataSnapshot.getChildren()) {
                     if (CoachUser.child("coachUserName").exists()) {      // if coach user is in firebase
-                        System.out.println("Test Test Test");
+//                        System.out.println("Test Test Test");
                             String searchCoachUserName = (String) CoachUser.child("coachUserName").getValue(); // search by name
                             String searchCoachAddress = (String) CoachUser.child("address").getValue(); //search by address
 

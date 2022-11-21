@@ -35,6 +35,7 @@
         <activity android:name=".activities.SearchCoachActivity"/>
         <activity android:name=".activities.MessengerActivity"/>
         <activity android:name=".activities.ClodMessengerActivity"/>
+        <activity android:name=".activities.MainAlgoActivity"/>
     </application>
 
 </manifest>
