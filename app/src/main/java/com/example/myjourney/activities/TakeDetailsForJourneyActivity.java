@@ -11,8 +11,11 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myjourney.R;
+import com.example.myjourney.adapter.PracticeBlockRecyclerAdapter;
 import com.example.myjourney.models.PracticeBlock;
 import com.example.myjourney.models.UserCoach;
 import com.example.myjourney.useful.CacheUtilities;
@@ -31,6 +34,8 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
     private static final String USERS_TABLE = "users";
     private final DatabaseReference mDBuser = FirebaseDatabase.getInstance().getReference(USERS_TABLE);
     private final FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private PracticeBlockRecyclerAdapter mAdapter;
+    private RecyclerView mRecyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,6 +51,14 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
         
         mCalculateJourneyButton =findViewById(R.id.CalculJourneyButton);
         mCalculateJourneyButton.setOnClickListener(v -> CalculatingTheMainAlgorithm ());
+
+        mRecyclerView = findViewById(R.id.recycler_view);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        mAdapter = new PracticeBlockRecyclerAdapter(this);
+//        mAdapter.setClickListener(this);
+        mRecyclerView.setAdapter(mAdapter);
 
 
     }
@@ -93,9 +106,9 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
 
         // i need to create child in firebase that hold all the practice block
 
-            if (group == 1){     // or we need to check the if and then do the while
+            if (group == 1){
+                final List<PracticeBlock> BlockList = new ArrayList<>();
                 while (counterWeeks == weeks) {   // we build the program from end to start
-                    final List<PracticeBlock> BlockList = new ArrayList<>();
                     PracticeBlock block = new PracticeBlock(counterWeeks,PaceStatusToProgram,RunningDistanceStatusToProgram);  //week,pace,distance
                     // need to insert the block to the firebase and add to block list
                     BlockList.add(block);
@@ -109,6 +122,7 @@ public class TakeDetailsForJourneyActivity extends AppCompatActivity {
 
                     /// need to think how to made 3 practices in a week
                 }
+                mAdapter.setNewItems(BlockList);
             }else if(group == 2){
                 while (weeks == 0) {   // we build the program from end to start
                     //// do something and create practice block
